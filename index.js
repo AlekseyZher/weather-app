@@ -20,10 +20,7 @@ function showCard({ name, country, temp, condition }) {
   const html = /*html*/ `
   <div class="card">
    <h2 class="card-city">${name} <span>${country}</span></h2>
-   <div class="card-weather">
     <div class="card-value">${temp}<span>&degC</span></div>
-    <img class="card-img" src="" alt="weather" />
-   </div>
    <div class="card-desc">${condition}</div>
  </div>`;
 
@@ -34,6 +31,7 @@ async function getWeather(city) {
   const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=ru`;
   const response = await fetch(url);
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
