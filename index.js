@@ -28,7 +28,7 @@ function showCard({ name, country, temp, condition }) {
 }
 
 async function getWeather(city) {
-  const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=ru`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=ru`;
   const response = await fetch(url);
   const data = await response.json();
   console.log(data);
